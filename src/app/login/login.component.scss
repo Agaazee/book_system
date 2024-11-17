@@ -1,0 +1,236 @@
+.logo-wrapper {
+  .logo {
+    padding: 10px;
+    text-align: center;
+    img {
+      padding-top: 1vh;
+      height: 60px;
+    }
+
+    h1 {
+      padding-top: 20px;
+      padding-left: 10px;
+      font-family: sans-serif;
+      color: #5a5a05;
+    }
+  }
+}
+
+.login-wrapper {
+  margin: 4vh auto;
+  width: 32vw;
+  position: relative;
+  .box-wrapper {
+    width: auto;
+    // height: 370px;
+    background: rgb(192, 13, 13);
+    // box-shadow: 5px 5px 6px rgba(219, 220, 221, 1);
+    // box-shadow: 7px 8px 12px -6px rgba(219, 220, 221, 1);
+    border: 0.2px solid rgba(47, 51, 81, 0.25);
+    border-radius: 8px;
+    padding: 20px 16px;
+    padding-bottom: 35px;
+    .text-Header {
+      text-align: center;
+      color: #010101;
+      span {
+        font-size: 24px;
+        font-weight: 100;
+        font-family: "roboto";
+      }
+    }
+    .login-content-wrapper {
+      padding: 0 16px;
+      .login-error {
+        color: rgb(255, 0, 225);
+        margin-left: 5px;
+      }
+      .login-input {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 5px 20px 8px 20px;
+        margin-bottom: 10px;
+        // box-shadow: 4px 1px 1px #f2f2f2;
+        // box-shadow: 0px 0px 0px 2px rgb(242 242 242 / 75%) inset;
+        label {
+          font-size: 12px;
+          font-family: "roboto";
+          color: #70798c;
+          font-weight: 600;
+        }
+        input {
+          height: 24px;
+          padding: 5px 10px;
+          margin: 5px 0;
+        }
+        input::placeholder {
+          opacity: 1;
+        }
+
+        .pass-icon {
+          position: absolute;
+          right: 25px;
+          top: 35px;
+          background-color: transparent;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          padding: 0 5px;
+          color: pink;
+        }
+      }
+      .login-bottom-links {
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 25px;
+        a {
+          color: purple;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 12px;
+
+          &:nth-child(2) {
+            text-align: right;
+          }
+        }
+      }
+      .forgot-opt {
+        position: absolute;
+        right: 15px;
+        bottom: 18px;
+        font-size: 12px;
+        color: burlywood;
+        cursor: pointer;
+      }
+      .login-btn {
+        text-align: center;
+        padding: 0 20px;
+        button {
+          outline: 0;
+          padding: 10px;
+          background-color: rgb(104, 9, 192);
+          width: 100%;
+          border: none;
+          // border: 0.15em solid #2f3251;
+          // border-color: #2f3251;
+          // border-style: solid;
+          color: yellowgreen;
+          outline: none;
+          border-radius: 20px;
+          // font-size: 11px;
+          font-family: "roboto", sans-serif;
+          font-weight: 600;
+          cursor: pointer;
+          &:disabled {
+            cursor: default;
+          }
+          img {
+            width: 40px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.gradient-box {
+  width: 30vw;
+  height: 25vw;
+  border-radius: 70px;
+  position: fixed;
+  background: linear-gradient(-135deg, #616972, 30%, rgb(29, 31, 57));
+
+  &.left {
+    left: -10%;
+    bottom: -12%;
+    transform: rotate(30deg);
+  }
+
+  &.right {
+    right: -10%;
+    top: -10%;
+    transform: rotate(-150deg);
+  }
+}
+
+.brand-logo {
+  position: fixed;
+  left: 15p;
+  bottom: 15px;
+
+  img {
+    width: 120px;
+  }
+}
+
+.brand-link {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #494949;
+
+  a {
+    color: #052b5a;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .login-wrapper {
+    .box-wrapper {
+      margin-top: 20%;
+      padding-top: 40px;
+      padding-bottom: 55px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .login-wrapper {
+    width: 70vw;
+
+    .box-wrapper .login-content-wrapper {
+      padding: 0 0;
+    }
+  }
+
+  .gradient-box {
+    width: 60vw;
+    height: 35vw;
+    z-index: -1;
+    &.left {
+      left: -10%;
+      bottom: -12%;
+    }
+
+    &.right {
+      right: -10%;
+      top: -10%;
+    }
+  }
+}
+
+.logoImageBook {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.0016em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loginError {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

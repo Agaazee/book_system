@@ -1,0 +1,27 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.user-list {
+  flex: 2; /* Takes more space */
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.search-criteria {
+  flex: 1; /* Takes less space */
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}

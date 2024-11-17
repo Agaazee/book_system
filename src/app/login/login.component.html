@@ -1,0 +1,93 @@
+<div class="main-Div">
+  <div class="left-div-Login">
+    <div class="title">
+      <img src="assets/images/favicon.png" style="width: 100px; height: 100px;"/>
+      Book Service
+    </div>
+    <div class="design">
+      <img src="assets/images/100X100-01_2.webp" alt="Book" style="width: 300px; height: 300px;"/>
+    </div>
+  </div>
+  <div class="right-div-Login">
+    <div class="center-div">
+      <div class="right-div">
+        <div class="header-div1">
+          <label class="title">Welcome back</label>
+          <div class="desc-div">
+            <label class="desc"
+              >Enter the email and password for your account</label
+            >
+          </div>
+        </div>
+        <div class="fields-div">
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-div">
+            <div *ngIf="loginError" class="errorField">
+              <img src="assets/images/Info.svg" />{{ loginError }}
+            </div>
+            <div class="login-input">
+              <label for="userName" class="title">Username</label>
+              <input
+                class="inputFields"
+                type="text"
+                name="userName"
+                formControlName="username"
+                placeholder="username@company.com" />
+              <div
+                *ngIf="username?.touched && username?.errors"
+                class="errorField">
+                <img src="assets/images/Info.svg" />Username is required
+              </div>
+            </div>
+            <div class="login-input">
+              <div class="titleDiv">
+                <label for="password" class="title">Password</label>
+                <label class="forgetPassword" tabindex="-1"
+                  ><a routerLink="/forgot" tabindex="-1"
+                    >Forgot Password?</a
+                  ></label
+                >
+              </div>
+              <div class="input-div">
+                <input
+                  class="inputFields"
+                  [type]="isPasswordVisible ? 'text' : 'password'"
+                  name="password"
+                  formControlName="password"
+                  placeholder="*************"
+                  autocomplete="new-password" />
+                <div class="pass-icon">
+                  <ng-container *ngIf="isPasswordVisible">
+                    <img
+                      src="assets/images/HidePassword.svg"
+                      alt="show"
+                      (click)="togglePasswordVisibility()" />
+                  </ng-container>
+                  <ng-container *ngIf="!isPasswordVisible">
+                    <img
+                      src="assets/images/ShowPassword.svg"
+                      alt="Hide"
+                      (click)="togglePasswordVisibility()" />
+                  </ng-container>
+                </div>
+              </div>
+              <div
+                *ngIf="password?.touched && password?.errors"
+                class="errorField">
+                <img src="assets/images/Info.svg" />Password is required
+              </div>
+            </div>
+
+            <button class="button-common">Sign In</button>
+            <div class="context">
+              <label>Not registered yet ?</label>
+              <a routerLink="login">Create an account</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-div">
+      <label> © Copyright 2024 - Book Service </label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="dashboard">
+  <!-- User List Section on the Left -->
+  <div class="user-list">
+    <h2>Users</h2>
+    <ul>
+      <li *ngFor="let user of data">
+        <strong>{{ user.username }}</strong> - User Id: {{ user.user_id }} - Role: {{ user.roles[0]?.role }}
+      </li>
+    </ul>
+  </div>
+  </div>
+
+  <!-- Search Criteria Section on the Right -->
+  <div class="search-criteria">
+    <h2>Search Criteria</h2>
+   <form [formGroup]="searchForm" (ngSubmit)="onSearch($event)">
+  <div class="search-container">
+    <select formControlName="searchKey">
+      <option value="" disabled selected>Select Criteria</option>
+      <option *ngFor="let criterion of searchCriteria" [value]="criterion">
+        {{ criterion }}
+      </option>
+    </select>
+    <input
+      type="text"
+      placeholder="Enter search value"
+      formControlName="searchValue"
+    />
+    <button type="submit">Search</button>
+  </div>
+</form>
+ 
+   <!-- Display Results -->
+  <div class="results" *ngIf="data.length > 0">
+    <h3>Search Results</h3>
+    <ul>
+      <li *ngFor="let book of data">
+        <strong>Title:</strong> {{ book.title }} <br />
+        <strong>Author:</strong> {{ book.author }} <br />
+        <strong>Genre:</strong> {{ book.genre }} <br />
+        <strong>Location:</strong> {{ book.location }} <br />
+        <strong>Condition:</strong> {{ book.condition }} <br />
+        <strong>Availability:</strong> {{ book.availability ? 'Available' : 'Not Available' }} <br />
+      </li>
+    </ul>
+  </div>
+
+  <!-- Display a message if no results -->
+  <div *ngIf="data.length === 0" class="no-results">
+    <p>No books found matching the criteria.</p>
+  </div>
+  </div>
+
